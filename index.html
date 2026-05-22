@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+    />
+
+    <meta name="theme-color" content="#0f1620" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <title>Islam Daily |Daily Islamic Activity</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+    <button id="menuBtn" class="menu-btn">☰</button>
+
+    <aside id="sidebar" class="sidebar">
+      <h2>Settings</h2>
+
+      <button id="themeToggle">Toggle Theme</button>
+
+      <button id="resetDB">Reset Database</button>
+
+      <input type="date" id="historyDate" />
+    </aside>
+
+    <!-- =========================
+       HERO
+  ========================== -->
+
+    <header class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+
+        <h1 class="main-title">Daily Islamic Activity</h1>
+
+        <p class="subtitle">
+          Build consistency in Quran, Hadith, Azkar, Dua and Good Deeds.
+        </p>
+      </div>
+    </header>
+
+    <!-- =========================
+       MAIN
+  ========================== -->
+
+    <main class="container">
+      <!-- =========================
+         QURAN
+    ========================== -->
+
+      <section class="card" id="quran-section">
+        <div class="card-header">
+          <h2>☪️ Recite & Understand Quran</h2>
+        </div>
+
+        <p class="progress-text">Quran Completion Progress</p>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p></p>
+
+        <div class="activity-list">
+          <span class="tag" id="currentAyah"> Total Ayahs: 6236 </span>
+        </div>
+
+        <label for="quranInput" class="ayah-field">
+          <span>Today I have read</span>
+          <input
+            id="quranInput"
+            type="number"
+            min="1"
+            placeholder="__"
+            inputmode="numeric"
+          />
+          <span>Ayahs</span>
+        </label>
+
+        <button type="button" class="history-toggle" aria-expanded="false">
+          Reading History
+        </button>
+
+        <div class="history-panel" hidden>
+          <div class="history-head">
+            <button type="button" id="prevMonthBtn">‹</button>
+            <h3 id="monthAndYear"></h3>
+            <button type="button" id="nextMonthBtn">›</button>
+          </div>
+
+          <div class="weekday-row">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+          </div>
+          <div id="quranHeatmap" class="quran-heatmap"></div>
+          <div id="quranDayDetail" class="day-detail">
+            Click a date to see how many ayahs you read that day.
+          </div>
+        </div>
+
+        <button id="quranBtn">Add Progress</button>
+      </section>
+
+      <!-- =========================
+         HADITH
+    ========================== -->
+
+      <section class="card" id="hadith-section">
+        <div class="card-header">
+          <h2>� Read Hadith</h2>
+        </div>
+
+        <p class="progress-text" id="hadithTopText">
+          Hadith Collection Progress
+        </p>
+
+        <div class="progress">
+          <div class="progress-fill" id="hadithTopFill"></div>
+        </div>
+
+        <div class="activity-list" id="hadithList"></div>
+
+        <button type="button" id="toggleHadithForm">Add New Hadith Book</button>
+
+        <div id="hadithFormWrap" hidden>
+          <input
+            type="text"
+            id="newHadithName"
+            placeholder="Hadith book name"
+          />
+
+          <input type="text" id="newHadithAuthor" placeholder="Hadith author" />
+
+          <input
+            type="number"
+            id="newHadithTotal"
+            placeholder="Total hadith quantity"
+          />
+
+          <button type="button" id="saveHadithBook">Save Book</button>
+        </div>
+      </section>
+
+      <!-- =========================
+         ISLAMIC BOOKS
+    ========================== -->
+
+      <section class="card" id="books-section">
+        <div class="card-header">
+          <h2>� Islamic Books</h2>
+        </div>
+
+        <p class="progress-text" id="booksTopText">Islamic Books Progress</p>
+
+        <div class="progress">
+          <div class="progress-fill" id="booksTopFill"></div>
+        </div>
+
+        <div class="activity-list" id="booksList"></div>
+
+        <button
+          type="button"
+          id="toggleBooksForm"
+          aria-expanded="false"
+          aria-controls="booksFormWrap"
+        >
+          Add New Islamic Book
+        </button>
+
+        <div id="booksFormWrap" hidden>
+          <input type="text" id="newBookName" placeholder="Book name" />
+
+          <input type="text" id="newBookAuthor" placeholder="Author name" />
+
+          <input type="number" id="newBookTotal" placeholder="Total pages" />
+
+          <button type="button" id="saveBook">Save Book</button>
+        </div>
+      </section>
+
+      <!-- =========================
+         PRAYER TIMES
+    ========================== -->
+
+      <section class="card" id="prayer-section">
+        <div class="card-header">
+          <h2>🕌 Prayer Times</h2>
+        </div>
+
+        <p class="progress-text">Today's Salah Completion</p>
+
+        <div class="progress">
+          <div class="progress-fill" id="prayerProgressFill"></div>
+        </div>
+
+        <div id="prayerList" class="activity-list"></div>
+
+        <button type="button" id="prayerTimesToggle" aria-expanded="false">
+          View Details
+        </button>
+
+        <div
+          id="prayerDetails"
+          hidden
+          style="
+            margin-top: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+          "
+        >
+          <p style="font-size: 0.9rem; color: var(--muted); margin: 0">
+            Track your daily prayers. Updated times based on your location
+            preferences.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+         DAILY SUMMARY
+    ========================== -->
+
+      <section class="card" id="summary-section">
+        <div class="card-header">
+          <h2>📊 Daily Summary</h2>
+        </div>
+
+        <div id="summaryStats" class="stats-row"></div>
+
+        <button
+          type="button"
+          id="viewFullSummary"
+          style="width: 100%; margin-top: 12px"
+        >
+          View Detailed Report
+        </button>
+      </section>
+
+      <!-- =========================
+         AZKAR
+    ========================== -->
+
+      <section class="card" id="azkar-section">
+        <div class="card-header">
+          <h2>🕌 Daily Azkar</h2>
+        </div>
+
+        <p class="progress-text">Today's Azkar Completion</p>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div class="activity-list"></div>
+
+        <input type="text" id="azkarInput" placeholder="Add Azkar" />
+
+        <button id="azkarBtn">Add Azkar</button>
+      </section>
+
+      <!-- =========================
+         DUA
+    ========================== -->
+
+      <section class="card" id="dua-section">
+        <div id="duaFullScreen" class="dua-fullscreen" hidden>
+          <div class="dua-fullscreen-header">
+            <h2>Daily Dua After Prayers</h2>
+            <button type="button" id="closeDuaView">✕</button>
+          </div>
+
+          <ul id="myUL" class="dua-list">
+            <li class="dua-item">
+              رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِيْ صَغِيْرًا
+            </li>
+            <li class="dua-item">رَّبِّ زِدْنِى عِلْمًا</li>
+            <li class="dua-item">
+              أَعُوْذُ بِاللّٰهِ أَنْ أَكُوْنَ مِنَ الْجَاهِلِيْنَ
+            </li>
+            <li class="dua-item">
+              يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِك
+            </li>
+            <li class="dua-item">
+              رَّبِّ اغْفِرْ وَارْحَمْ وَأَنْتَ خَيْرُ الرَّاحِمِيْنَ
+            </li>
+            <li class="dua-item">
+              رَبِّ اجْعَلْنِيْ مُقِيْمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِيْ ۚ
+              رَبَّنَا وَتَقَبَّلْ دُعَاء
+            </li>
+            <li class="dua-item">
+              رَبَّنَا اغْفِرْ لِيْ وَلِوَالِدَيَّ وَلِلْمُؤْمِنِيْنَ يَوْمَ
+              يَقُوْمُ الْحِسَاب...
+            </li>
+          </ul>
+
+          <button type="button" id="saveDuaDone" class="save-dua-btn" hidden>
+            Save as Done
+          </button>
+        </div>
+
+        <div class="card-header">
+          <h2>🤲 Daily Dua</h2>
+        </div>
+
+        <p class="progress-text">Today's Dua Completion</p>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div class="activity-list"></div>
+
+        <input type="text" id="duaInput" placeholder="Add a Dua" />
+
+        <button id="duaBtn">Add Dua</button>
+      </section>
+
+      <!-- =========================
+         GOOD DEEDS
+    ========================== -->
+
+      <section class="card" id="deeds-section">
+        <div class="card-header">
+          <h2>❤️ Good Deeds</h2>
+        </div>
+
+        <p class="progress-text">Today's Good Deeds</p>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div class="activity-list"></div>
+
+        <input type="text" id="deedInput" placeholder="Add Good Deed" />
+
+        <button id="deedBtn">Add Deed</button>
+      </section>
+    </main>
+
+    <!-- =========================
+       FOOTER
+  ========================== -->
+
+    <footer>
+      <p>“The most beloved deeds to Allah are those that are consistent.”</p>
+    </footer>
+
+    <!-- =========================
+       SCRIPT
+  ========================== -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
