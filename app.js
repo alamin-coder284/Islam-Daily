@@ -921,77 +921,78 @@ function initModalSystem() {
   });
 }
 
+
+
+
+//test 
+
 function openCardModal(card) {
-  // Store original parent and position reference
-  const originalParent = card.parentNode;
-  const originalNextSibling = card.nextSibling;
+  // Prevent double open
+  if (document.querySelector(".card-modal-wrapper")) return;
 
-  // Get original display style to restore later
-  const originalDisplay = card.style.display;
-  const originalPosition = card.style.position;
-  const originalZIndex = card.style.zIndex;
+  // Create wrapper
+  const wrapper = document.createElement("div");
+  wrapper.className = "card-modal-wrapper";
 
-  // Create overlay
-  const overlay = document.createElement("div");
-  overlay.className = "modal-overlay";
-
-  // Create modal content wrapper
-  const content = document.createElement("div");
-  content.className = "modal-content";
-
-  // Create modal header
-  const header = card.querySelector(".card-header h2");
-  const headerText = header ? header.textContent : "Details";
-
-  const modalHeader = document.createElement("div");
-  modalHeader.className = "modal-header";
-
-  const title = document.createElement("h2");
-  title.textContent = headerText;
-
+  // Create close button
   const closeBtn = document.createElement("button");
   closeBtn.className = "close-modal-btn";
   closeBtn.innerHTML = "✕";
-  closeBtn.type = "button";
 
-  modalHeader.appendChild(title);
-  modalHeader.appendChild(closeBtn);
-  content.appendChild(modalHeader);
+  // Save original styles
+  const original = {
+    parent: card.parentNode,
+    next: card.nextSibling,
+    style: card.getAttribute("style") || ""
+  };
 
-  // MOVE the original card (not clone) into modal
-  card.style.position = 'relative'; // Reset any fixed positioning
-  card.style.display = 'block';
-  content.appendChild(card);
+  // Add modal class
+  card.classList.add("modal-card");
 
-  overlay.appendChild(content);
-  document.body.appendChild(overlay);
+  // Move card into wrapper
+  wrapper.appendChild(card);
 
-  // Close function to restore card to original position
+  // Add to body
+  document.body.append(wrapper, closeBtn);
+
+  // Animate
+  requestAnimationFrame(() => {
+    wrapper.classList.add("show");
+  });
+
   function closeModal() {
-    // Remove card from modal and put back in original location
     clearAndHideSection(card);
-    if (originalNextSibling) {
-      originalParent.insertBefore(card, originalNextSibling);
-    } else {
-      originalParent.appendChild(card);
-    }
+    wrapper.classList.remove("show");
 
-    // Restore original styles
-    card.style.display = originalDisplay;
-    card.style.position = originalPosition;
-    card.style.zIndex = originalZIndex;
+    setTimeout(() => {
+      // Restore card
+      card.classList.remove("modal-card");
+      card.setAttribute("style", original.style);
 
-    overlay.remove();
+      if (original.next) {
+        original.parent.insertBefore(card, original.next);
+      } else {
+        original.parent.appendChild(card);
+      }
+
+      wrapper.remove();
+      closeBtn.remove();
+    }, 220);
   }
 
-  closeBtn.addEventListener("click", closeModal);
+  closeBtn.onclick = closeModal;
 
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) {
+  wrapper.onclick = (e) => {
+    if (e.target === wrapper) {
       closeModal();
     }
-  });
+  };
 }
+
+
+
+//  test
+//    clearAndHideSection(card);
 
 /* ========================================
    DUA HISTORY TRACKING SYSTEM
