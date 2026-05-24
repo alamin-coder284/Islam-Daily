@@ -883,7 +883,7 @@ footer {
   backdrop-filter: blur(4px);
   z-index: 10000;
   display: flex;
-  align-items: flex-end;
+  align-items: end;
   animation: slideIn 0.3s ease;
 }
 
@@ -903,7 +903,7 @@ footer {
   border: 1px solid var(--border);
   border-radius: 20px 20px 0 0;
   width: 100%;
-  max-height: 92vh;
+  max-height: 96vh;
   overflow-y: auto;
   padding: 24px 20px;
   animation: slideUp 0.3s ease;
@@ -1042,9 +1042,11 @@ footer {
   }
 
   .menu-btn {
-    width: 50px !important;
-    height: 50px !important;
+    width: 40px !important;
+    height: 40px !important;
     font-size: 1.4rem;
+    display: grid;
+    place-content: center
   }
 
   .sidebar {

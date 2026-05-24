@@ -922,12 +922,24 @@ function initModalSystem() {
 }
 
 function openCardModal(card) {
+  // Store original parent and position reference
+  const originalParent = card.parentNode;
+  const originalNextSibling = card.nextSibling;
+
+  // Get original display style to restore later
+  const originalDisplay = card.style.display;
+  const originalPosition = card.style.position;
+  const originalZIndex = card.style.zIndex;
+
+  // Create overlay
   const overlay = document.createElement("div");
   overlay.className = "modal-overlay";
 
+  // Create modal content wrapper
   const content = document.createElement("div");
   content.className = "modal-content";
 
+  // Create modal header
   const header = card.querySelector(".card-header h2");
   const headerText = header ? header.textContent : "Details";
 
@@ -944,27 +956,39 @@ function openCardModal(card) {
 
   modalHeader.appendChild(title);
   modalHeader.appendChild(closeBtn);
-
   content.appendChild(modalHeader);
 
-  const cardElements = Array.from(card.children).filter(
-    (child) => !child.classList.contains("card-header"),
-  );
-
-  cardElements.forEach((el) => {
-    content.appendChild(el.cloneNode(true));
-  });
+  // MOVE the original card (not clone) into modal
+  card.style.position = 'relative'; // Reset any fixed positioning
+  card.style.display = 'block';
+  content.appendChild(card);
 
   overlay.appendChild(content);
   document.body.appendChild(overlay);
 
-  closeBtn.addEventListener("click", () => {
+  // Close function to restore card to original position
+  function closeModal() {
+    // Remove card from modal and put back in original location
+    clearAndHideSection(card);
+    if (originalNextSibling) {
+      originalParent.insertBefore(card, originalNextSibling);
+    } else {
+      originalParent.appendChild(card);
+    }
+
+    // Restore original styles
+    card.style.display = originalDisplay;
+    card.style.position = originalPosition;
+    card.style.zIndex = originalZIndex;
+
     overlay.remove();
-  });
+  }
+
+  closeBtn.addEventListener("click", closeModal);
 
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
-      overlay.remove();
+      closeModal();
     }
   });
 }
