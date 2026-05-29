@@ -335,8 +335,9 @@ async function initQuran() {
 
   button.addEventListener("click", async () => {
     const value = Number(input.value);
+    
     if (!Number.isFinite(value) || value <= 0) return;
-
+   
     const today = getLocalDateKey();
 
     data.dailyLogs = data.dailyLogs || {};
@@ -350,6 +351,12 @@ async function initQuran() {
     await saveData(data);
     updateUI();
     renderQuranHeatmap(data.dailyLogs || {});
+    
+    // update last ayah displayer header
+    const lastAyahDisplayer = card.querySelector('h2');
+    const pTag = document.createElement('p');
+    lastAyahDisplayer.appendChild(pTag);
+    pTag.innerHTML = currentAyah.textContent;
   });
 
   updateUI();

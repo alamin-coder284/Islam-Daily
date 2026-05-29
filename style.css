@@ -127,7 +127,7 @@ body {
   align-items: center;
   gap: 8px;
   width: 100%;
-  padding: 15px 16px;
+  padding: 1px 16px;
   border-radius: 16px;
   border: 1px solid rgba(212, 165, 116, 0.12);
   background: rgba(255, 255, 255, 0.03);
@@ -187,6 +187,19 @@ body {
 #quran-section {
   position: relative;
 }
+
+#quran-section h2 > p {
+ position: absolute;
+ top: 70%;
+ max-width: 40ch;
+ width: 70%;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ color: rgba(212, 165, 116, 1);
+}
+
+
 
 .quran-heatmap-header {
   position: sticky;
@@ -849,6 +862,13 @@ footer {
   }
 }
 
+svg {
+  fill: rgba(212, 165, 116, 1);
+  width: 20px;
+  aspect-ratio: 1;
+  vertical-align: -3px;
+}
+
 .mini-btn {
   margin-top: 10px;
   width: 100%;
@@ -868,6 +888,8 @@ footer {
 .card-header h2 {
   margin: 0;
   flex: 1;
+  display: flex;
+  gap: 10px
 }
 
 .card-header:hover {
@@ -951,7 +973,7 @@ footer {
   gap: 6px;
   background: rgba(212, 165, 116, 0.12);
   border: 1px solid rgba(212, 165, 116, 0.2);
-  padding: 8px 12px;
+  padding: 2px 12px;
   border-radius: 12px;
   color: var(--accent);
   font-size: 0.9rem;

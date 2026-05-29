@@ -1,378 +1,392 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
-    />
+<head>
+  <meta charset="UTF-8" />
 
-    <meta name="theme-color" content="#0f1620" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0f1620" />
 
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <title>Islam Daily | Daily Islamic Activity</title>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <title>Islam Daily | Daily Islamic Activity</title>
 
-  <body>
-    <!-- =========================
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- =========================
        SIDEBAR
   ========================== -->
 
-    <button id="menuBtn" class="menu-btn">☰</button>
+  <button id="menuBtn" class="menu-btn">☰</button>
 
-    <aside id="sidebar" class="sidebar">
-      <h2>Settings</h2>
+  <aside id="sidebar" class="sidebar">
+    <h2>Settings</h2>
 
-      <button id="themeToggle">Toggle Theme</button>
+    <button id="themeToggle">Toggle Theme</button>
 
-      <button id="resetDB">Reset Database</button>
+    <button id="resetDB">Reset Database</button>
 
-      <input type="date" id="historyDate" />
-    </aside>
+    <input type="date" id="historyDate" />
+  </aside>
 
-    <!-- =========================
+  <!-- =========================
        HERO
   ========================== -->
 
-    <header class="hero">
-      <div class="hero-overlay"></div>
+  <header class="hero">
+    <div class="hero-overlay"></div>
 
-      <div class="hero-content">
-        <p class="arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+    <div class="hero-content">
+      <p class="arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
 
-        <h1 class="main-title">Daily Islamic Activity</h1>
+      <h1 class="main-title">Daily Islamic Activity</h1>
 
-        <p class="subtitle">
-          Build consistency in Quran, Hadith, Azkar, Dua and Good Deeds.
-        </p>
-      </div>
-    </header>
+      <p class="subtitle">
+        Build consistency in Quran, Hadith, Azkar, Dua and Good Deeds.
+      </p>
+    </div>
+  </header>
 
-    <!-- =========================
+  <!-- =========================
        MAIN
   ========================== -->
 
-    <main class="container">
-      <!-- =========================
+  <main class="container">
+    <!-- =========================
          QURAN
     ========================== -->
 
-      <section class="card" id="quran-section">
-        <div class="card-header">
-          <h2>☪️ Recite & Understand Quran</h2>
+    <section class="card" id="quran-section">
+      <div class="card-header">
+        <h2><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 103.19 122.88" style="enable-background:new 0 0 103.19 122.88" xml:space="preserve">
+            <style type="text/css">
+              .st0 {
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+              }
+            </style>
+            <g>
+              <path class="st0" d="M17.16,0h82.72c1.82,0,3.31,1.49,3.31,3.31v92.32c-0.15,2.58-3.48,2.64-7.08,2.48H15.94 c-4.98,0-9.05,4.07-9.05,9.05c0,4.98,4.07,9.05,9.05,9.05l80.17,0v-9.63l7.08,0v12.24c0,2.23-1.82,4.05-4.05,4.05l-82.85,0 C7.33,122.88,0,115.55,0,106.59V17.16C0,7.72,7.72,0,17.16,0L17.16,0L17.16,0z M70.48,69.34c-2.32,1.5-3.85,2.43-4.58,2.77 c-3.44,1.61-7.09,2.41-10.92,2.41c-7.1,0-13.15-2.51-18.15-7.51c-5.01-5.01-7.5-11.05-7.5-18.15c0-7.15,2.51-13.21,7.54-18.19 c5.03-4.98,11.14-7.48,18.33-7.48c5.29,0,10.39,1.72,15.29,5.15l-8.62-1.74c-6.18,0-11.44,2.17-15.8,6.51 c-4.34,4.34-6.52,9.6-6.52,15.75c0,6.11,2.17,11.35,6.5,15.72c4.32,4.37,9.52,6.54,15.59,6.54L70.48,69.34L70.48,69.34z M60.7,45.91h7.46l2.33-7.09l2.28,7.09h7.47l-6.04,4.37l2.28,7.12l-6-4.38l-6.05,4.38l2.3-7.12L60.7,45.91L60.7,45.91z" />
+            </g>
+          </svg> Recite & Understand Quran</h2>
+
+      </div>
+
+      <p class="progress-text">Quran Completion Progress</p>
+
+      <div class="progress">
+        <div class="progress-fill"></div>
+      </div>
+
+      <p></p>
+
+      <div class="activity-list">
+        <span class="tag" id="currentAyah"> Total Ayahs: 6236 </span>
+      </div>
+
+      <label for="quranInput" class="ayah-field">
+        <span>Today I have read</span>
+        <input id="quranInput" type="number" min="1" placeholder="__" inputmode="numeric" />
+        <span>Ayahs</span>
+      </label>
+
+      <button type="button" class="history-toggle" aria-expanded="false">
+        Reading History
+      </button>
+
+      <div class="history-panel" hidden>
+        <div class="history-head">
+          <button type="button" id="prevMonthBtn">‹</button>
+          <h3 id="monthAndYear"></h3>
+          <button type="button" id="nextMonthBtn">›</button>
         </div>
 
-        <p class="progress-text">Quran Completion Progress</p>
-
-        <div class="progress">
-          <div class="progress-fill"></div>
+        <div class="weekday-row">
+          <span>Sun</span>
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
         </div>
-
-        <p></p>
-
-        <div class="activity-list">
-          <span class="tag" id="currentAyah"> Total Ayahs: 6236 </span>
+        <div id="quranHeatmap" class="quran-heatmap"></div>
+        <div id="quranDayDetail" class="day-detail">
+          Click a date to see how many ayahs you read that day.
         </div>
+      </div>
 
-        <label for="quranInput" class="ayah-field">
-          <span>Today I have read</span>
-          <input
-            id="quranInput"
-            type="number"
-            min="1"
-            placeholder="__"
-            inputmode="numeric"
-          />
-          <span>Ayahs</span>
-        </label>
+      <button id="quranBtn">Add Progress</button>
+    </section>
 
-        <button type="button" class="history-toggle" aria-expanded="false">
-          Reading History
-        </button>
-
-        <div class="history-panel" hidden>
-          <div class="history-head">
-            <button type="button" id="prevMonthBtn">‹</button>
-            <h3 id="monthAndYear"></h3>
-            <button type="button" id="nextMonthBtn">›</button>
-          </div>
-
-          <div class="weekday-row">
-            <span>Sun</span>
-            <span>Mon</span>
-            <span>Tue</span>
-            <span>Wed</span>
-            <span>Thu</span>
-            <span>Fri</span>
-            <span>Sat</span>
-          </div>
-          <div id="quranHeatmap" class="quran-heatmap"></div>
-          <div id="quranDayDetail" class="day-detail">
-            Click a date to see how many ayahs you read that day.
-          </div>
-        </div>
-
-        <button id="quranBtn">Add Progress</button>
-      </section>
-
-      <!-- =========================
+    <!-- =========================
          HADITH
     ========================== -->
 
-      <section class="card" id="hadith-section">
-        <div class="card-header">
-          <h2>� Read Hadith</h2>
-        </div>
+    <section class="card" id="hadith-section">
+      <div class="card-header">
+        <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.19 122.88">
+            <path d="M17.16 0h82.72a3.32 3.32 0 013.31 3.31v92.32c-.15 2.58-3.48 2.64-7.08 2.48H15.94c-4.98 0-9.05 4.07-9.05 9.05s4.07 9.05 9.05 9.05h80.17v-9.63h7.08v12.24c0 2.23-1.82 4.05-4.05 4.05H16.29C7.33 122.88 0 115.55 0 106.59V17.16C0 7.72 7.72 0 17.16 0zm3.19 13.4h2.86c1.46 0 2.66.97 2.66 2.15v67.47c0 1.18-1.2 2.15-2.66 2.15h-2.86c-1.46 0-2.66-.97-2.66-2.15V15.55c.01-1.19 1.2-2.15 2.66-2.15z" fill-rule="evenodd" clip-rule="evenodd" />
+          </svg> Read Hadith</h2>
+      </div>
 
-        <p class="progress-text" id="hadithTopText">
-          Hadith Collection Progress
-        </p>
+      <p class="progress-text" id="hadithTopText">
+        Hadith Collection Progress
+      </p>
 
-        <div class="progress">
-          <div class="progress-fill" id="hadithTopFill"></div>
-        </div>
+      <div class="progress">
+        <div class="progress-fill" id="hadithTopFill"></div>
+      </div>
 
-        <div class="activity-list" id="hadithList"></div>
+      <div class="activity-list" id="hadithList"></div>
 
-        <button type="button" id="toggleHadithForm">Add New Hadith Book</button>
+      <button type="button" id="toggleHadithForm">Add New Hadith Book</button>
 
-        <div id="hadithFormWrap" hidden>
-          <input
-            type="text"
-            id="newHadithName"
-            placeholder="Hadith book name"
-          />
+      <div id="hadithFormWrap" hidden>
+        <input type="text" id="newHadithName" placeholder="Hadith book name" />
 
-          <input type="text" id="newHadithAuthor" placeholder="Hadith author" />
+        <input type="text" id="newHadithAuthor" placeholder="Hadith author" />
 
-          <input
-            type="number"
-            id="newHadithTotal"
-            placeholder="Total hadith quantity"
-          />
+        <input type="number" id="newHadithTotal" placeholder="Total hadith quantity" />
 
-          <button type="button" id="saveHadithBook">Save Book</button>
-        </div>
-      </section>
+        <button type="button" id="saveHadithBook">Save Book</button>
+      </div>
+    </section>
 
-      <!-- =========================
+    <!-- =========================
          ISLAMIC BOOKS
     ========================== -->
 
-      <section class="card" id="books-section">
-        <div class="card-header">
-          <h2>� Islamic Books</h2>
-        </div>
+    <section class="card" id="books-section">
+      <div class="card-header">
+        <h2>
+          <?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 99.45" style="enable-background:new 0 0 122.88 99.45" xml:space="preserve">
+            <style type="text/css">
+              .st0 {
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+              }
+            </style>
+            <g>
+              <path class="st0" d="M64.48,0.38h18.42c1.85,0,3.36,1.51,3.36,3.36v14.84H61.12V3.74C61.12,1.89,62.63,0.38,64.48,0.38L64.48,0.38z M86.27,27.65v45.19H61.12V27.65H86.27L86.27,27.65z M86.27,81.92v13.8c0,1.85-1.51,3.36-3.36,3.36H64.48 c-1.85,0-3.36-1.51-3.36-3.36v-13.8H86.27L86.27,81.92z" />
+              <path class="st0" d="M101.09,0.38h18.42c1.85,0,3.36,1.51,3.36,3.36v14.84h-0.02H97.73V3.74C97.73,1.89,99.25,0.38,101.09,0.38 L101.09,0.38z M122.88,27.65v45.19H97.73V27.65h25.13H122.88L122.88,27.65z M122.88,81.92v13.8c0,1.85-1.51,3.36-3.36,3.36h-18.42 c-1.85,0-3.36-1.51-3.36-3.36v-13.8H122.88L122.88,81.92z" />
+              <path class="st0" d="M35.95,0.2l17.31,6.3c1.74,0.63,2.64,2.57,2.01,4.31L50.2,24.75l-23.63-8.6l5.07-13.94 C32.28,0.47,34.22-0.43,35.95,0.2L35.95,0.2z M47.1,33.28L31.65,75.75l-23.63-8.6l15.45-42.46L47.1,33.28L47.1,33.28z M28.55,84.28 l-4.72,12.96c-0.63,1.74-2.57,2.64-4.31,2.01l-17.31-6.3c-1.74-0.63-2.64-2.57-2.01-4.31l4.72-12.96L28.55,84.28L28.55,84.28z" />
+            </g>
+          </svg> Islamic Books
+        </h2>
+      </div>
 
-        <p class="progress-text" id="booksTopText">Islamic Books Progress</p>
+      <p class="progress-text" id="booksTopText">Islamic Books Progress</p>
 
-        <div class="progress">
-          <div class="progress-fill" id="booksTopFill"></div>
-        </div>
+      <div class="progress">
+        <div class="progress-fill" id="booksTopFill"></div>
+      </div>
 
-        <div class="activity-list" id="booksList"></div>
+      <div class="activity-list" id="booksList"></div>
 
-        <button
-          type="button"
-          id="toggleBooksForm"
-          aria-expanded="false"
-          aria-controls="booksFormWrap"
-        >
-          Add New Islamic Book
-        </button>
+      <button type="button" id="toggleBooksForm" aria-expanded="false" aria-controls="booksFormWrap">
+        Add New Islamic Book
+      </button>
 
-        <div id="booksFormWrap" hidden>
-          <input type="text" id="newBookName" placeholder="Book name" />
+      <div id="booksFormWrap" hidden>
+        <input type="text" id="newBookName" placeholder="Book name" />
 
-          <input type="text" id="newBookAuthor" placeholder="Author name" />
+        <input type="text" id="newBookAuthor" placeholder="Author name" />
 
-          <input type="number" id="newBookTotal" placeholder="Total pages" />
+        <input type="number" id="newBookTotal" placeholder="Total pages" />
 
-          <button type="button" id="saveBook">Save Book</button>
-        </div>
-      </section>
+        <button type="button" id="saveBook">Save Book</button>
+      </div>
+    </section>
 
-      <!-- =========================
+    <!-- =========================
          PRAYER TIMES
     ========================== -->
 
-      <section class="card" id="prayer-section">
-        <div class="card-header">
-          <h2>🕌 Prayer Times</h2>
-        </div>
+    <section class="card" id="prayer-section">
+      <div class="card-header">
+        <h2>
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 130H80V120C80 115 84 112 88 112C92 112 96 115 96 120V130H110V85C110 65 95 50 75 50C55 50 40 65 40 85V130"/>
 
-        <p class="progress-text">Today's Salah Completion</p>
+            <path d="M25 130V90H35V130H25Z" />
+            <path d="M22 90L30 70L38 90H22Z" />
+            <path d="M20 105H40V110H20V105Z"/>
 
-        <div class="progress">
-          <div class="progress-fill" id="prayerProgressFill"></div>
-        </div>
+            <path d="M115 85L123 65L131 85H115Z"/>
+            <path d="M120 85V100" stroke="#333333" stroke-width="10" />
 
-        <div id="prayerList" class="activity-list"></div>
+            <path d="M75 25C80 25 85 29 85 35C85 41 80 45 75 45C78 45 81 42 81 35C81 28 78 25 75 25Z"/>
 
-        <button type="button" id="prayerTimesToggle" aria-expanded="false">
-          View Details
-        </button>
+            <circle cx="130" cy="130" r="55" stroke="#333333" stroke-width="10" />
+            <path d="M130 100V135H160" stroke="#333333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
 
-        <div
-          id="prayerDetails"
-          hidden
-          style="
+          Prayer Times
+        </h2>
+      </div>
+
+      <p class="progress-text">Today's Salah Completion</p>
+
+      <div class="progress">
+        <div class="progress-fill" id="prayerProgressFill"></div>
+      </div>
+
+      <div id="prayerList" class="activity-list"></div>
+
+      <button type="button" id="prayerTimesToggle" aria-expanded="false">
+        View Details
+      </button>
+
+      <div id="prayerDetails" hidden style="
             margin-top: 12px;
             padding: 12px;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
-          "
-        >
-          <p style="font-size: 0.9rem; color: var(--muted); margin: 0">
-            Track your daily prayers. Updated times based on your location
-            preferences.
-          </p>
-        </div>
-      </section>
+          ">
+        <p style="font-size: 0.9rem; color: var(--muted); margin: 0">
+          Track your daily prayers. Updated times based on your location
+          preferences.
+        </p>
+      </div>
+    </section>
 
-      <!-- =========================
+    <!-- =========================
          DAILY SUMMARY
     ========================== -->
 
-      <section class="card" id="summary-section">
-        <div class="card-header">
-          <h2>📊 Daily Summary</h2>
-        </div>
+    <section class="card" id="summary-section">
+      <div class="card-header">
+        <h2><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 105.98" style="enable-background:new 0 0 122.88 105.98" xml:space="preserve"><g><path d="M122.88,105.98H9.59v-0.02c-2.65,0-5.05-1.08-6.78-2.81c-1.72-1.72-2.79-4.11-2.79-6.75H0V0h12.26v93.73h110.62V105.98 L122.88,105.98z M83.37,45.6h19.55c1.04,0,1.89,0.85,1.89,1.89v38.46c0,1.04-0.85,1.89-1.89,1.89H83.37 c-1.04,0-1.89-0.85-1.89-1.89V47.5C81.48,46.46,82.33,45.6,83.37,45.6L83.37,45.6z M25.36,22.07h19.55c1.04,0,1.89,0.85,1.89,1.89 v62c0,1.04-0.85,1.89-1.89,1.89H25.36c-1.04,0-1.89-0.85-1.89-1.89v-62C23.47,22.92,24.32,22.07,25.36,22.07L25.36,22.07 L25.36,22.07z M54.37,8.83h19.54c1.04,0,1.89,0.85,1.89,1.89v75.24c0,1.04-0.85,1.89-1.89,1.89H54.37c-1.04,0-1.89-0.85-1.89-1.89 V10.72C52.48,9.68,53.33,8.83,54.37,8.83L54.37,8.83z"/></g></svg> Daily Summary</h2>
+      </div>
 
-        <div id="summaryStats" class="stats-row"></div>
+      <div id="summaryStats" class="stats-row"></div>
 
-        <button
-          type="button"
-          id="viewFullSummary"
-          style="width: 100%; margin-top: 12px"
-        >
-          View Detailed Report
-        </button>
-      </section>
+      <button type="button" id="viewFullSummary" style="width: 100%; margin-top: 12px">
+        View Detailed Report
+      </button>
+    </section>
 
-      <!-- =========================
+    <!-- =========================
          AZKAR
     ========================== -->
 
-      <section class="card" id="azkar-section">
-        <div class="card-header">
-          <h2>🕌 Daily Azkar</h2>
-        </div>
+    <section class="card" id="azkar-section">
+      <div class="card-header">
+        <h2>🕌 Daily Azkar</h2>
+      </div>
 
-        <p class="progress-text">Today's Azkar Completion</p>
+      <p class="progress-text">Today's Azkar Completion</p>
 
-        <div class="progress">
-          <div class="progress-fill"></div>
-        </div>
+      <div class="progress">
+        <div class="progress-fill"></div>
+      </div>
 
-        <div class="activity-list"></div>
+      <div class="activity-list"></div>
 
-        <input type="text" id="azkarInput" placeholder="Add Azkar" />
+      <input type="text" id="azkarInput" placeholder="Add Azkar" />
 
-        <button id="azkarBtn">Add Azkar</button>
-      </section>
+      <button id="azkarBtn">Add Azkar</button>
+    </section>
 
-      <!-- =========================
+    <!-- =========================
          DUA
     ========================== -->
 
-      <section class="card" id="dua-section">
-        <div id="duaFullScreen" class="dua-fullscreen" hidden>
-          <div class="dua-fullscreen-header">
-            <h2>Daily Dua After Prayers</h2>
-            <button type="button" id="closeDuaView">✕</button>
-          </div>
-
-          <ul id="myUL" class="dua-list">
-            <li class="dua-item">
-              رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِيْ صَغِيْرًا
-            </li>
-            <li class="dua-item">رَّبِّ زِدْنِى عِلْمًا</li>
-            <li class="dua-item">
-              أَعُوْذُ بِاللّٰهِ أَنْ أَكُوْنَ مِنَ الْجَاهِلِيْنَ
-            </li>
-            <li class="dua-item">
-              يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِك
-            </li>
-            <li class="dua-item">
-              رَّبِّ اغْفِرْ وَارْحَمْ وَأَنْتَ خَيْرُ الرَّاحِمِيْنَ
-            </li>
-            <li class="dua-item">
-              رَبِّ اجْعَلْنِيْ مُقِيْمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِيْ ۚ
-              رَبَّنَا وَتَقَبَّلْ دُعَاء
-            </li>
-            <li class="dua-item">
-              رَبَّنَا اغْفِرْ لِيْ وَلِوَالِدَيَّ وَلِلْمُؤْمِنِيْنَ يَوْمَ
-              يَقُوْمُ الْحِسَاب...
-            </li>
-          </ul>
-
-          <button type="button" id="saveDuaDone" class="save-dua-btn" hidden>
-            Save as Done
-          </button>
+    <section class="card" id="dua-section">
+      <div id="duaFullScreen" class="dua-fullscreen" hidden>
+        <div class="dua-fullscreen-header">
+          <h2>Daily Dua After Prayers</h2>
+          <button type="button" id="closeDuaView">✕</button>
         </div>
 
-        <div class="card-header">
-          <h2>🤲 Daily Dua</h2>
-        </div>
+        <ul id="myUL" class="dua-list">
+          <li class="dua-item">
+            رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِيْ صَغِيْرًا
+          </li>
+          <li class="dua-item">رَّبِّ زِدْنِى عِلْمًا</li>
+          <li class="dua-item">
+            أَعُوْذُ بِاللّٰهِ أَنْ أَكُوْنَ مِنَ الْجَاهِلِيْنَ
+          </li>
+          <li class="dua-item">
+            يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِك
+          </li>
+          <li class="dua-item">
+            رَّبِّ اغْفِرْ وَارْحَمْ وَأَنْتَ خَيْرُ الرَّاحِمِيْنَ
+          </li>
+          <li class="dua-item">
+            رَبِّ اجْعَلْنِيْ مُقِيْمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِيْ ۚ
+            رَبَّنَا وَتَقَبَّلْ دُعَاء
+          </li>
+          <li class="dua-item">
+            رَبَّنَا اغْفِرْ لِيْ وَلِوَالِدَيَّ وَلِلْمُؤْمِنِيْنَ يَوْمَ
+            يَقُوْمُ الْحِسَاب...
+          </li>
+        </ul>
 
-        <p class="progress-text">Today's Dua Completion</p>
+        <button type="button" id="saveDuaDone" class="save-dua-btn" hidden>
+          Save as Done
+        </button>
+      </div>
 
-        <div class="progress">
-          <div class="progress-fill"></div>
-        </div>
+      <div class="card-header">
+        <h2>🤲 Daily Dua</h2>
+      </div>
 
-        <div class="activity-list"></div>
+      <p class="progress-text">Today's Dua Completion</p>
 
-        <input type="text" id="duaInput" placeholder="Add a Dua" />
+      <div class="progress">
+        <div class="progress-fill"></div>
+      </div>
 
-        <button id="duaBtn">Add Dua</button>
-      </section>
+      <div class="activity-list"></div>
 
-      <!-- =========================
+      <input type="text" id="duaInput" placeholder="Add a Dua" />
+
+      <button id="duaBtn">Add Dua</button>
+    </section>
+
+    <!-- =========================
          GOOD DEEDS
     ========================== -->
 
-      <section class="card" id="deeds-section">
-        <div class="card-header">
-          <h2>❤️ Good Deeds</h2>
-        </div>
+    <section class="card" id="deeds-section">
+      <div class="card-header">
+        <h2>❤️ Good Deeds</h2>
+      </div>
 
-        <p class="progress-text">Today's Good Deeds</p>
+      <p class="progress-text">Today's Good Deeds</p>
 
-        <div class="progress">
-          <div class="progress-fill"></div>
-        </div>
+      <div class="progress">
+        <div class="progress-fill"></div>
+      </div>
 
-        <div class="activity-list"></div>
+      <div class="activity-list"></div>
 
-        <input type="text" id="deedInput" placeholder="Add Good Deed" />
+      <input type="text" id="deedInput" placeholder="Add Good Deed" />
 
-        <button id="deedBtn">Add Deed</button>
-      </section>
-    </main>
+      <button id="deedBtn">Add Deed</button>
+    </section>
+  </main>
 
-    <!-- =========================
+  <!-- =========================
        FOOTER
   ========================== -->
 
-    <footer>
-      <p>“The most beloved deeds to Allah are those that are consistent.”</p>
-    </footer>
+  <footer>
+    <p>“The most beloved deeds to Allah are those that are consistent.”</p>
+  </footer>
 
-    <!-- =========================
+  <!-- =========================
        SCRIPT
   ========================== -->
 
-    <script src="app.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
+
 </html>
